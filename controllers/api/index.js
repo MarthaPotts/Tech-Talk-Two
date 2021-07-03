@@ -1,8 +1,14 @@
 const router = require('express').Router(); 
-const userRoutes = require('../api/user.routes'); 
-const postRoutes = require('../api/post-routes'); 
-const commentRoutes = require('../api/comment-routes'); 
 
+//import and bind to a variable 
+const userRoutes = require('./user-routes'); 
+const postRoutes = require('./post-routes'); 
+const commentRoutes = require('./comment-routes'); 
+
+//bind to a route : though I'm not certain these should be here...
+//middleware
 router.use('/user', userRoutes); 
 router.use('/post', postRoutes); 
-router.use('/comment', commentRoutes); //this one throwing a type error as 'object'? router.use() requires a mw fx but got object js 8:8 ? server?
+router.use('/comment', commentRoutes); 
+
+module.exports = router; 
