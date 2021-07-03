@@ -1,14 +1,16 @@
-
+   
 <div class="allpost-home-container">
-    {{#each posts}} 
+ {{!-- {{#each posts}}  --}}
     <article class="allpost-home">
         <div class="allpost-home-header">
             <h2><a href="/post/{{id}}id">{{title}}title</a></h2>
         </div>
-        <div>Posted by: {{User.username}}User on {{format_date createdAt}}</div>
+        <div>Posted by: {{User.username}}User on 
+            {{!-- {{format_date createdAt}} --}}
+            </div>
         <div class="allpost-home-body">
             {{body}}post body should render here
         </div>
-        {{/each}}
+        {{!-- {{/each}} --}}
     </article>
 </div>

@@ -12,7 +12,7 @@
 //         }), 
 //         headers: {'Content-Type': 'application/json'},
 //     }); 
-//     // document.location.replace('/dashboard'); 
+//     document.location.replace('/dashboard'); 
 // }; 
 
 // document.querySelector('#new-post-form').addEventListener('submit', newPostFormHandler); 
