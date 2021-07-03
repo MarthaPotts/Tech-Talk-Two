@@ -1,25 +1,46 @@
 <!-- loggedinhome -->
     <h1>Tech Talk Two Blog</h1>
     <div id="home-post-container">
-        <a href=# onclick="showPostBody()"><p id="home-post-title">Post.title</p></a>
-        <p id="home-post-created">Posted By</p>
-        <p id="home-post-date">formatDate</p>
+        {{!-- {{#each posts}} --}}
+        <a href="/post/{{id}}"><p id="home-post-title">Title{{title}}</p></a>
+        <p id="home-post-created">Posted By {{User.username}} 
+            {{!-- on {{format_date createdAt}} --}}
+            </p>
+       
         <div id="home-post-body">
-            Post.body lorem ipsum the hell outa this
+            {{body}}Write some stuff in here
+            {{!-- {{/each}} --}}
             <div id="home-post-comments-container">
-                <div id="home-post-comments">Comments go here</div>
-                <p id="home-post-comments-by">Commenter</p>
-                <p id="home-post-comments-date">formatDate</p>
-                <button id="add-comment-btn" onclick="addComment()">Add Comment</button>
+                {{!-- {{#if post.Comments}} --}}
+                {{!-- {{#each post.Comments}} --}}
+                <p id="comm">Comments: </p>
+                <div id="home-post-comments">{{body}}</div>
+                <p id="home-post-comments-by">Commenter: {{User.username}}
+                    {{!-- on {{format_date createdAt}} --}}
+                    </p>
+                {{!-- {{/each}} --}}
+                {{!-- {{/if}} --}}
+                <form id="add-comment-form">
+                <input type="hidden" name="post-id" value="{{post.id}}" />
+                <label for="comment-body-form">Comment</label>
+                <textarea id="comment-body-form" name="comment-body"></textarea>
+                <button id="add-comment-btn" type="submit">Add Comment</button>
+                </form>
             </div>
         </div>
     </div>
     <!-- dashboard create post  -->
     <div id="new-post-container">
-        <input type="text" placeholder="Let the muses take you..." id="dashboard-new-post-input" />
+        {{!-- <input type="text" placeholder="Let the muses take you..." id="dashboard-new-post-input" /> --}}
+        <form id="new-post-form">
+            <label for="post-title">Title</label>
+            <input type="text" name="post-title" />
+
+            <label for="post-body">Content</label>
+            <textarea name="post-body" placeholder="Let the Muses sing to you..."></textarea>
+        </form>
         <button type="submit">Add New</button>
     </div>
     <!-- dashboard edit post  -->
-    <script>
-        
-    </script>
+    <script src="/scripts/comment.js"></script>
+    <script src="/scripts/newpost.js"></script>
