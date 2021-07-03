@@ -24,10 +24,10 @@ app.engine('hbs', handlebars({
 //     res.render('homepage'); 
 // })
 // const controllers = require('./controllers'); 
-app.use((req, res, next) => {
-    require('./controllers');
-    next();  
-}); 
+// app.use((req, res, next) => {
+//     require('./controllers');
+//     next();  
+// }); 
 
 sequelize.sync( {force: false} ).then( () => {
     app.listen(PORT, () => console.log(`App listening on ${PORT}`)); 
