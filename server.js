@@ -49,23 +49,23 @@ app.use(express.static('public'));
 // });
 
 //api
-app.get('/', (req, res) => {
-    res.render('homepage'); 
-}); 
+// app.get('/', (req, res) => {
+//     res.render('homepage'); 
+// }); 
 // Router.get('/', (req, res) => res.render('homepage')); DOES NOT WORK!!!! 
-app.get('/login', (req, res) => {
-    res.render('login'); 
-}).get('/signup', (req, res) => {
-    res.render('signup'); 
-}).get('/updatepost', (req, res) => {
-    res.render('updatepost'); 
-}).get('/createpost', (req, res) => {
-    res.render('createpost'); 
-}).get('/dashboard', (req, res) => {
-    res.render('dashboard'); 
-}).get('/logout', (req, res) => {
-    res.render('homepage'); 
-}); 
+// app.get('/login', (req, res) => {
+//     res.render('login'); 
+// }).get('/signup', (req, res) => {
+//     res.render('signup'); 
+// }).get('/updatepost', (req, res) => {
+//     res.render('updatepost'); 
+// }).get('/createpost', (req, res) => {
+//     res.render('createpost'); 
+// }).get('/dashboard', (req, res) => {
+//     res.render('dashboard'); 
+// }).get('/logout', (req, res) => {
+//     res.render('homepage'); 
+// }); 
 
 app.listen(PORT, () => console.log(`App listening on ${PORT}`)); 
 // sequelize.sync( {force: false} ).then( () => {
