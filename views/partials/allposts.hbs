@@ -1,13 +1,14 @@
 
-<main class='thread-container'>
-    {{!-- {{#each posts}} --}}
-         <header class='thread-header'>
-             <a href='/post/{{id}}'><h3 class='title'>{{title}}post.title</h3></a>
-             <span class='by-and-on'>Posted by: {{User.username}} username</span> 
-                <span class='by-and-on'>{{!-- {{format_date post.createdAt}} --}}getDateHelper
-                </span>
-         </header>
-         <section class='thread-body'>{{body}}body</section>
-    {{!-- {{/each}} --}}
-       </main>
-       {{!-- <script src="/scripts/comment.js"></script> --}}
+<div class="allpost-home-container">
+    {{#each posts}} 
+    <article class="allpost-home">
+        <div class="allpost-home-header">
+            <h2><a href="/post/{{id}}id">{{title}}title</a></h2>
+        </div>
+        <div>Posted by: {{User.username}}User on {{format_date createdAt}}</div>
+        <div class="allpost-home-body">
+            {{body}}post body should render here
+        </div>
+        {{/each}}
+    </article>
+</div>

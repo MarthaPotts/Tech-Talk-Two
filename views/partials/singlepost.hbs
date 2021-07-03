@@ -1,0 +1,33 @@
+<div id="singlepost-container">
+    <article id="singlepost-post">
+        <h2 id="singlepost-header">{{post.title}}</h2>
+        <div id="singlepost-author">
+            Posted by {{post.User.username}} on {{format_date createdAt}}
+        </div>
+        <div id="singlepost-body">
+            {{post.body}}
+        </div>
+    </article>
+    {{#if post.comments}}
+    <section id="spcomment-section-container">
+        <h3 id="spcomment-header">Comments</h3>
+        {{#each post.comments}}
+        <div id="spbody">
+            {{body}}
+            <p id="spauthor">{{User.username}},  {{format_date createdAt}}</p>
+        </div>
+        {{/each}}
+    </section>
+    {{/if}}
+    <form id="new-spcomment-form">
+        <div id="new-spcomment-header">
+            <h3>Add New Comment</h3>
+        </div>
+        <div id="new-spcomment-input-wrapper">
+            <input type="hidden" name="post-id" value={{post.id}} />
+            <label for="new-spcomment-body">Comment</label>
+            <textarea name="comment-body" placeholder="Passion corrupts reason..."></textarea>
+            <button type="submit">Two Cents</button>
+        </div>
+    </form>
+</div>
