@@ -20,9 +20,14 @@ app.engine('hbs', handlebars({
     partialsDir: __dirname + '/views/partials', 
 })); 
 
-app.get('/', (req, res) => {
-    res.render('homepage'); 
-})
+// app.get('/', (req, res) => {
+//     res.render('homepage'); 
+// })
+// const controllers = require('./controllers'); 
+app.use((req, res, next) => {
+    require('./controllers');
+    next();  
+}); 
 
 sequelize.sync( {force: false} ).then( () => {
     app.listen(PORT, () => console.log(`App listening on ${PORT}`)); 
